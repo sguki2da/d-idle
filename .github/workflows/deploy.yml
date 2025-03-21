@@ -19,7 +19,7 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  EKS_CLUSTER: hyeyoung-eks-cluster
+  EKS_CLUSTER: seunguk-eks-cluster
   ARGOCD_SERVER: a8d0a61136e424f4bb17d986b70da5f4-1482899556.us-east-1.elb.amazonaws.com
   ARGOCD_USERNAME: admin
   ARGOCD_PASSWORD: enjcoR4gYg6VhAH1
@@ -71,7 +71,7 @@ jobs:
         run: |
           if ! argocd app get didle-app --server ${{ env.ARGOCD_SERVER }}; then
             argocd app create didle-app \
-              --repo https://github.com/hyeyoung21/d-idle.git \
+              --repo https://github.com/seunguk21/d-idle.git \
               --path ./helm-charts/didle \
               --dest-server https://kubernetes.default.svc \
               --dest-namespace default \
